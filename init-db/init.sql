@@ -1,2 +1,2 @@
-CREATE DATABASE userdb;
-CREATE DATABASE taskdb;
+-- demodb 由 POSTGRES_DB 環境變數自動建立
+-- users 和 tasks 表由 JPA ddl-auto=update 自動建立
