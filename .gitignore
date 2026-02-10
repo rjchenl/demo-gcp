@@ -1,0 +1,32 @@
+# Java / Maven
+backend/**/target/
+*.class
+*.jar
+*.war
+
+# Maven Wrapper (generated, can be re-downloaded)
+backend/**/.mvn/wrapper/maven-wrapper.jar
+
+# IDE
+.idea/
+*.iml
+.vscode/
+*.swp
+
+# Node / Frontend
+frontend/node_modules/
+frontend/dist/
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log
+nohup.out
+
+# Docker volumes
+postgres-data/
+
+# Env
+.env
