@@ -1,17 +1,26 @@
 server:
-  port: 8082
+  port: ${PORT:8082}
 
 spring:
   application:
     name: task-service
   datasource:
-    url: jdbc:postgresql://localhost:5432/demodb
-    username: postgres
-    password: postgres
+    url: ${SPRING_DATASOURCE_URL:jdbc:postgresql://localhost:5432/demodb}
+    username: ${SPRING_DATASOURCE_USERNAME:postgres}
+    password: ${SPRING_DATASOURCE_PASSWORD:postgres}
   jpa:
     hibernate:
       ddl-auto: update
-    show-sql: true
+    show-sql: ${JPA_SHOW_SQL:true}
+  cloud:
+    gcp:
+      sql:
+        enabled: ${CLOUD_SQL_ENABLED:false}
+        instance-connection-name: ${CLOUD_SQL_INSTANCE:}
+        database-name: ${CLOUD_SQL_DATABASE:}
 
 user-service:
-  url: http://localhost:8081
+  url: ${USER_SERVICE_URL:http://localhost:8081}
+
+cors:
+  allowed-origins: ${CORS_ALLOWED_ORIGINS:http://localhost:5173}
